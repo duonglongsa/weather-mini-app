@@ -1,5 +1,32 @@
 {
+  "version": "0.0.1",
+  "description": "TODO",
+  "keywords": [
+    "mxflutter"
+  ],
+  "license": "BSD",
+  "contributors": [
+    "xsoap <mxflutter@qq.com>"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist lib",
+    "build": "mxflutter build --env production --out  com.app.2000251 --app com.app.2000251 ./src/index.ts",
+    "build:es5": "mxflutter build --target es5 --env production --out  com.app.2000251 --app com.app.2000251 ./src/index.ts",
+    "build:ci-es6": "mxflutter build --env production --out ./ci_dist --app com.app.2000251 ./src/index.ts",
+    "build:ci-es5": "mxflutter build --target es5 --env production --out ./ci_dist --app com.app.2000251 ./src/index.ts",
+    "build:ci": "npm run build:ci-es6 && npm run build:ci-es5",
+    "dev": "mxflutter build --watch --out  com.app.2000251 --app com.app.2000251 ./src/index.ts"
+  },
   "dependencies": {
-    "mxflutter-toolchain": "^0.9.3"
+    "mxflutter": "^0.9.0",
+    "mxflutter-dio": "^0.9.1",
+    "mxflutter-widgets": "^0.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.14",
+    "mxflutter-toolchain": "^0.9.0",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.5"
   }
 }
+
